@@ -13,7 +13,12 @@ EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER", "receiver@gmail.com")
 SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
 
-# Configure your search URLs here
+# Configure your search URLs here (Multiple URLs cast a wider net to maximize discovery)
 FB_MARKETPLACE_URL = "https://www.facebook.com/marketplace/sheffield/search?query=pinball%20machine&radius_in_km=250&locale=en_GB"
-KEYWORDS = ["pinball", "pinball machine", "pin ball"]
-TARGET_MACHINES = ["addams family", "twilight zone", "medieval madness"]
+
+FB_MARKETPLACE_URLS = [
+    "https://www.facebook.com/marketplace/sheffield/search?query=pinball&radius_in_km=250&locale=en_GB",
+    "https://www.facebook.com/marketplace/sheffield/search?query=pinball%20machine&radius_in_km=250&locale=en_GB",
+    "https://www.facebook.com/marketplace/sheffield/search?query=stern%20pinball&radius_in_km=250&locale=en_GB",
+    "https://www.facebook.com/marketplace/sheffield/search?query=williams%20pinball&radius_in_km=250&locale=en_GB",
+]

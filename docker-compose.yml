@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  pinbot:
+    build: .
+    container_name: pinbot_container
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/listings.db
+
+  web_ui:
+    build: .
+    container_name: pinbot_web_ui
+    command: python web_ui.py
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - WEB_UI_HOST=0.0.0.0
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "127.0.0.1:5000:5000"

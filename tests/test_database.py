@@ -25,7 +25,7 @@ class TestDatabase(unittest.TestCase):
         h = "test_hash"
         platform = "Test"
         self.assertTrue(is_new_listing(platform, h))
-        add_listing(platform, h)
+        add_listing(platform, h, "Test Title", "http://test.com")
         self.assertFalse(is_new_listing(platform, h))
 
 if __name__ == '__main__':
